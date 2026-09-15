@@ -5,4 +5,6 @@ This repository showcases the work I completed during my time in undergrad at Te
 
 In this assignment, I was tasked to model population growth that is proportional to its current size. Euler's method was employed to numerically solve the population-growth differential equation. It was then compared with the analytical solution to $\frac{dN}{dt} = rN$, providing the solution $N(t) = N_{0} e^{rt}$. I then investigated how adjusting the timesteps and percentage deviation between the analytical and numerical solutions. The population growth and bifurcation was plotted in PlottingHw1.jpynb
 
-## Homework 2 - 
+## Homework 2 - Projectile Motion
+
+In this assignment, I was tasked to model the trajectory of a rock thrown from a height towards a river. The goal was to determine the best launch angle given a variety of adjustments to the system, and to determine the speed of the rock as it reaches the bottom. I included forces from drag force, different wind speeds in multiple directions, and the inclusion of rain droplets impacting the rock. 
