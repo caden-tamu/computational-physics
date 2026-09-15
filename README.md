@@ -1,2 +1,2 @@
 # computational-physics
-Modeling and analytics of physical properties from PHYS 412 at Texas A&amp;M University
+This repository showcases the work I completed during my time in undergrad at Texas A\&ampM University. 
