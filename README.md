@@ -1,2 +1,2 @@
 # computational-physics
-This repository showcases the work I completed during my time in undergrad at Texas A\&ampM University. 
+This repository showcases the work I completed during my time in undergrad at Texas A\&M University. 
