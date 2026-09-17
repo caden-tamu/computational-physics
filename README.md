@@ -3,8 +3,7 @@ This repository showcases the work I completed during my time in undergrad at Te
 
 ## Homework 1 - Numerical Methods & Euler Method
 
-In this assignment, I was tasked to model population growth that is proportional to its current size. Euler's method was employed to numerically solve the population-growth differential equation. It was then compared with the analytical solution to $\frac{dN}{dt} = rN$, providing the solution $N(t) = N_{0} e^{rt}$. I then investigated how adjusting the timesteps and percentage deviation between the analytical and numerical solutions. The population growth and bifurcation was plotted in PlottingHw1.jpynb
-
+This repository contains a C++ and Python-based computational study modeling population dynamics over time using Euler’s method for numerical integration alongside analytical solutions. The assignment explores the rate of population growth, defined by the differential equation $\frac{dN}{dt} = R(t) = rN$, as well as a modified system incorporating a time-dependent, density-dependent mortality factor represented by the term $-\beta N^2$. Through C++ simulation scripts like Hw1.cpp and Hw1D.cpp, numerical models are generated and saved to CSV datasets—including population_growth_real1.0.csv and population_growth_beta_euler.csv—to analyze how numerical approximations diverge from exact mathematical models over time.The Python notebook PlottingHw1.ipynb is used to load, visualize, and evaluate these results by plotting $N(t)$ alongside the growth rate $R(t)$, as well as calculating numerical error metrics ($\Delta N$ and $\Delta R$) across time steps. Additionally, the project analyzes a scenario where new, $N^2$-dependent death dynamics are introduced at $t = 100$, demonstrating how the population transitions from exponential growth toward a stable steady-state equilibrium value, $N^* = \frac{r}{\beta} = 20\text{ million}$.
 ## Homework 2 - Projectile Motion
 
 #### Overview
