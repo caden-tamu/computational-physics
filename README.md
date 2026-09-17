@@ -15,14 +15,6 @@ Numerical simulations implemented in C++ (Hw2.cpp, Hw2Wind.cpp, Hw2Rain.cpp) com
 
 ## Homework 3 - Bifurcation of Logistic Map
 
-In this assignment, I was tasked with determining the transition to chaos through period doubling of the logistic map $x_n = \mu x_n(1-x_n)$. The goal was to determine the critical value of $\mu$ where the system begins to behave chaotically. Ie used two complementary methods in Python to evaluate the Lyapunov exponent for different values of $\mu$:Analytical Derivative Method (Direct Formula):The theoretical Lyapunov exponent is calculated using the average sum of the natural log of the absolute derivative of the map at each step: 
+This project investigates non-linear dynamics and the meanderings of chaotic systems through numerical analysis of the logistic map, defined by the recurrence relation $x_{n+1} = r x_n (1 - x_n)$. C++ simulation scripts (Hw3.cpp, Hw3B.cpp, and Hw3D.cpp) execute long-term iterations to track steady-state behavior, period-doubling cascades, and chaotic regimes across varying control parameter values $r$. The resulting simulation outputs—including bifurcation.txt, trajectories.txt, and logistic_mu_2.1.txt—capture the System's state evolution and orbital points under different initial conditions.
 
-$\lambda = \lim_{N \to \infty} \frac{1}{N} \sum_{i=0}^{N-1} \ln \vert{}\mu(1 - 2x_i)\vert{}$ 
-
-$\mu = 2.1$: $\lambda \approx -2.3026$ (Rapidly settles to a single stable fixed point)
-
-$\mu = 3.3$: $\lambda \approx -0.6189$ (Settles into a stable 2-cycle)
-
-$\mu = 3.6$: $\lambda \approx 0.1821$ (Positive value confirms chaotic behavior)
-
-Numerical Perturbation & Slope Fitting Method: We tracked two trajectories starting at $x_0$ and $x_0 + \epsilon$ (where $\epsilon = 10^{-5}$).We logged the log-distance $\ln\vert{}\Delta x_n\vert{}$ over several iterations.By fitting a line to the initial growth phase of $\ln\vert{}\Delta x_n\vert{}$ versus the iteration number $n$, the slope of that line provides an empirical estimate of $\lambda$.
+The accompanying Jupyter Notebook Graphing3.ipynb handles data ingestion, visualization, and analysis using Python. It generates time-series trajectory plots showing the transition of $x_n$ from stable fixed points to multi-cycle oscillations, as well as the complete bifurcation diagram showing $x_\infty$ as a function of $r$. Through these plots, the project illustrates fundamental concepts in chaos theory, including sensitivity to initial conditions, Feigenbaum pitchfork bifurcations, and phase space behavior.
