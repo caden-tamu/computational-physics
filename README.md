@@ -13,6 +13,9 @@ This repository showcases the work I completed during my time in undergrad at Te
 ## Homework 1 - Numerical Methods & Euler's Method
 
 This repository contains a C++ and Python-based computational study modeling population dynamics over time using Euler’s method for numerical integration alongside analytical solutions. The assignment explores the rate of population growth, defined by the differential equation $\frac{dN}{dt} = R(t) = rN$, as well as a modified system incorporating a time-dependent, density-dependent mortality factor represented by the term $-\beta N^2$. Through C++ simulation scripts like Hw1.cpp and Hw1D.cpp, numerical models are generated and saved to CSV datasets—including population_growth_real1.0.csv and population_growth_beta_euler.csv—to analyze how numerical approximations diverge from exact mathematical models over time.The Python notebook PlottingHw1.ipynb is used to load, visualize, and evaluate these results by plotting $N(t)$ alongside the growth rate $R(t)$, as well as calculating numerical error metrics ($\Delta N$ and $\Delta R$) across time steps. Additionally, the project analyzes a scenario where new, $N^2$-dependent death dynamics are introduced at $t = 100$, demonstrating how the population transitions from exponential growth toward a stable steady-state equilibrium value, $N^* = \frac{r}{\beta} = 20\text{ million}$.
+
+<img width="867" height="559" alt="image" src="https://github.com/user-attachments/assets/1f6563f8-c3fb-4a57-a7d5-0921e8c092bc" />
+
 ## Homework 2 - Projectile Motion
 
 This project investigates the two-dimensional motion of a projectile subject to quadratic drag, gravitational acceleration, and environmental perturbations such as headwinds and heavy rainfall, governed by the vector differential equation $\mathbf{F} = m\frac{d^2\mathbf{r}}{dt^2} = -mg\hat{\mathbf{j}} - C_d v \mathbf{v} + \mathbf{F}_{\text{env}}$. 
