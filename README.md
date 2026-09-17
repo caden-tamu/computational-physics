@@ -1,12 +1,19 @@
 # computational-physics
 This repository showcases the work I completed during my time in undergrad at Texas A\&M University. These biweekly projects outline my skills in Python and C++ to handle complex data and arrive at simplified assumptions based on the data.
 
-## Homework 1 - Numerical Methods & Euler Method
+## Table of Contents
+* [Homework 1 - Numerical Methods & Euler Method](#homework-1---numerical-methods--euler-method)
+* [Homework 2 - Projectile Motion](#homework-2---projectile-motion)
+* [Homework 3 - Bifurcation of Logistic Map](#homework-3---bifurcation-of-logistic-map)
+* [Homework 4 - Orbital Mechanics](#homework-4---orbital-mechanics)
+* [Homework 5 - Biot-Savart Law](#homework-5---biot-savart-law)
+* [Homework 6 - Wave Motion & Fourier Analysis](#homework-6---wave-motion--fourier-analysis)
+* [Homework 7 - Particle Diffusion & Monte Carlo Random Walk](#homework-7---particle-diffusion--monte-carlo-random-walk)
+
+## Homework 1 - Numerical Methods & Euler's Method
 
 This repository contains a C++ and Python-based computational study modeling population dynamics over time using Euler’s method for numerical integration alongside analytical solutions. The assignment explores the rate of population growth, defined by the differential equation $\frac{dN}{dt} = R(t) = rN$, as well as a modified system incorporating a time-dependent, density-dependent mortality factor represented by the term $-\beta N^2$. Through C++ simulation scripts like Hw1.cpp and Hw1D.cpp, numerical models are generated and saved to CSV datasets—including population_growth_real1.0.csv and population_growth_beta_euler.csv—to analyze how numerical approximations diverge from exact mathematical models over time.The Python notebook PlottingHw1.ipynb is used to load, visualize, and evaluate these results by plotting $N(t)$ alongside the growth rate $R(t)$, as well as calculating numerical error metrics ($\Delta N$ and $\Delta R$) across time steps. Additionally, the project analyzes a scenario where new, $N^2$-dependent death dynamics are introduced at $t = 100$, demonstrating how the population transitions from exponential growth toward a stable steady-state equilibrium value, $N^* = \frac{r}{\beta} = 20\text{ million}$.
 ## Homework 2 - Projectile Motion
-
-#### Overview
 
 This project investigates the two-dimensional motion of a projectile subject to quadratic drag, gravitational acceleration, and environmental perturbations such as headwinds and heavy rainfall, governed by the vector differential equation $\mathbf{F} = m\frac{d^2\mathbf{r}}{dt^2} = -mg\hat{\mathbf{j}} - C_d v \mathbf{v} + \mathbf{F}_{\text{env}}$. 
 
@@ -22,7 +29,7 @@ The accompanying Jupyter Notebook Graphing3.ipynb handles data ingestion, visual
 
 ## Homework 4 - Orbital Mechanics
 
-This project models planetary orbital mechanics with a focus on simulating Mercury’s orbit and calculating its perihelion precession under general relativity. C++ simulation scripts (Hw1A.cpp, Hw1B.cpp, Hw1C.cpp, and Hw1D.cpp) compute orbital trajectories by solving Newtonian gravitational motion and incorporating General Relativity (GR) corrections. The modified gravitational force is modeled as $F_g = \frac{G M m}{r^2} \left(1 + \frac{\alpha}{r^2}\right)$, where the $\frac{\alpha}{r^2}$ term accounts for relativistic effects and drives the precession. The C++ programs output simulation data to text files—such as mercury_ellipse.txt, MercuryOrbitWithGR.txt, and varying- $\alpha$ runs like mercury_gr_0.000100.txt—recording time-series position and velocity vectors $(x, y, v_x, v_y)$.
+This project models planetary orbital mechanics with a focus on simulating Mercury’s orbit and calculating its perihelion precession under General Relativity. C++ simulation scripts (Hw1A.cpp, Hw1B.cpp, Hw1C.cpp, and Hw1D.cpp) compute orbital trajectories by solving Newtonian gravitational motion and incorporating General Relativity (GR) corrections. The modified gravitational force is modeled as $F_g = \frac{G M m}{r^2} \left(1 + \frac{\alpha}{r^2}\right)$, where the $\frac{\alpha}{r^2}$ term accounts for relativistic effects and drives the precession. The C++ programs output simulation data to text files—such as mercury_ellipse.txt, MercuryOrbitWithGR.txt, and varying- $\alpha$ runs like mercury_gr_0.000100.txt—recording time-series position and velocity vectors $(x, y, v_x, v_y)$.
 
 The accompanying Jupyter Notebook GraphingHw4.ipynb parses and analyzes the simulation data using Python libraries (numpy, matplotlib, and scipy). It compares uncorrected circular and elliptical Newtonian orbits against-relativistic trajectories, tracks aphelion and perihelion angles over time ($\theta_p$), and performs linear regressions to determine the precession rate $\dot{\theta}_p$. By extrapolating the precession rates across different values of $\alpha$ to the physical value of $\alpha = 1.1 \times 10^{-8}\text{ AU}^2$, the analysis accurately recovers Mercury's observed relativistic precession rate of approximately $43$ arcseconds per century ($43.99''/\text{century}$).
 
@@ -38,7 +45,7 @@ This project examines the physics of wave motion and spectral analysis on a stre
 
 The accompanying Jupyter Notebooks (HomeworkGraphingC.ipynb and Graphing6C.ipynb) handle data processing and visualization using numpy and matplotlib. By performing a Discrete Fourier Transform (DFT) on the time-domain signal $y(x_s, t)$, the analysis reconstructs the power spectrum to identify the fundamental frequency $f_1 = \frac{c}{2L}$ and its higher harmonics $f_n = n \cdot f_1$. The notebooks overlay these theoretical harmonic frequencies onto the computed power spectra to evaluate the fidelity of the numerical wave propagation and analyze spectral energy distribution across different boundary conditions and driving parameters.
 
-## Homework 7 - Partical Diffusion & Monte Carlos Random Walk
+## Homework 7 - Partical Diffusion & Monte Carlo Random Walk
 
 This project models the diffusion of particles in a two-dimensional grid and explores the thermodynamic approach toward equilibrium by tracking the evolution of entropy over time. C++ simulation scripts like Hw7DSoln.cpp simulate the random walk or particle distribution dynamics on $N \times N$ spatial grids (such as $100 \times 100$ and $200 \times 200$), generating spatial distribution snapshots and time-series entropy logs saved to CSV files including entropy_vs_time.csv, entropy_vs_time_L200.csv, and individual step snapshots (e.g., snapshot_100000.csv). The entropy per particle, $S(t)$, is tracked to observe the system's relaxation toward a maximum entropy state at equilibrium, $S_\infty$.
 
