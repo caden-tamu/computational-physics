@@ -7,7 +7,14 @@ In this assignment, I was tasked to model population growth that is proportional
 
 ## Homework 2 - Projectile Motion
 
-In this assignment, I was tasked to model the trajectory of a rock thrown from a height towards a river, and to determine if the starting angle and velocity was sufficient to reach the other side. The goal was to determine the best launch angle given a variety of adjustments to the system, and to determine the speed of the rock as it reaches the bottom. I included forces from drag force, different wind speeds in multiple directions, and the inclusion of air densities.
+#### Overview
+
+This project models projectile motion under various environmental conditions using C++ simulations for data generation and Python (pandas, matplotlib) for visualization and analysis. The goal of the assignment is to analyze how drag, wind, and precipitation affect a projectile's trajectory, maximum height, range, and impact speed across different launch angles.
+
+#### Output data 
+
+files containing trajectory $(x, y)$ coordinate points and impact speed arrays for each scenario.Key Scenarios & Features1. Standard Projectile MotionEvaluates trajectories at angles: 15°, 25°, 35°, and 45°. Identifies the optimal launch angle for maximum range (37°, reaching a maximum height of ~102.86 m).2. Projectile Motion with HeadwindModels aerodynamic drag under a 25 mph (11.18 m/s) headwind.Determines the adjusted optimal launch angle (33.5°).3. Projectile Motion in Heavy RainSimulates the drag/impedance effect caused by heavy rain.Evaluates impact speeds and optimal launch angle (36.5°).Dependencies & RequirementsC++ Compiler (g++ or similar with C++11 support)Python 3.xPython Libraries:pandasmatplotlibglob
+
 
 ## Homework 3 - Bifurcation of Logistic Map
 
