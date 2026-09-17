@@ -51,6 +51,9 @@ $$- \beta N^2$$
 * **Data Processing:** The Jupyter Notebook (`PlottingHw1.ipynb`) ingests the datasets to calculate numerical error metrics ($\Delta N$ and $\Delta R$) and evaluate convergence against analytical baselines over varying step sizes.
 * **Equilibrium Analysis:** Modeled a system transition at $t = 100$ where new death dynamics drive the population from exponential growth into a stable steady-state equilibrium at $N^* = \frac{r}{\beta} = 20\text{ million}$.
 
+<img width="869" height="540" alt="image" src="https://github.com/user-attachments/assets/2fe5aca9-59c3-4667-8e86-b25eb13ad795" />
+
+
 ---
 
 ## Homework 2 - Projectile Motion & Multivariate Simulation
@@ -64,6 +67,11 @@ $$F = m \frac{d^2 r}{d t^2} = -mg\hat{j} - C_d v \mathbf{v} + F_{\text{env}}$$
 * **Data Analysis & Optimization:** Python (`pandas`, `matplotlib`) was used in `Graphing_Hw_2.ipynb` to clean and analyze the simulation outputs, identifying optimal parameters for maximum range and terminal impact velocity.
 * **Key Results:** Baseline aerodynamic drag reduced the optimal launch angle from $45^\circ$ to $\theta \approx 37^\circ$ (peak height $\approx 102.86\text{ m}$). Factoring in a $25\text{ mph}$ ($11.18\text{ m/s}$) headwind and heavy rainfall further shifted the optimal launch angle downward to $33.5^\circ$ and $36.5^\circ$, respectively.
 
+<img width="948" height="643" alt="image" src="https://github.com/user-attachments/assets/d36b9e13-6baa-4139-bbb9-ba5a4000bac8" />
+<img width="883" height="524" alt="image" src="https://github.com/user-attachments/assets/96b4ba51-aa4c-4479-858a-a6db112fbd61" />
+
+
+
 ---
 
 ## Homework 3 - Bifurcation & Non-Linear System Analysis
@@ -76,6 +84,9 @@ $$x_{n+1} = r x_n (1 - x_n)$$
 * **Long-Term Iteration:** C++ scripts (`Hw3.cpp`, `Hw3B.cpp`, `Hw3D.cpp`) execute iterative simulations to model system behavior across varying values of the control parameter $r$, logging steady-state points and orbital trajectories into structured text files.
 * **Visualization & Sensitivity Analysis:** Python (`Graphing3.ipynb`) processes the trajectory data to generate time-series plots and a full bifurcation diagram ($x_\infty$ vs. $r$), illustrating period-doubling cascades, Feigenbaum pitchfork bifurcations, and chaotic regimes.
 * **Model Insights:** Demonstrates extreme sensitivity to initial conditions and parameter variations, a core concept in risk modeling and non-linear forecasting.
+
+<img width="862" height="528" alt="image" src="https://github.com/user-attachments/assets/e13a6b98-8dfb-438a-8f0f-cda2ed585b36" />
+
 
 ---
 
@@ -92,6 +103,9 @@ where the $\frac{\alpha}{r^2}$ term introduces General Relativity corrections th
 * **Regression & Extrapolation:** The Jupyter Notebook (`GraphingHw4.ipynb`) utilizes `numpy`, `matplotlib`, and `scipy` to track perihelion angle changes ($\theta_p$) over time and applies linear regression to determine the precession rate $\dot{\theta}_p$.
 * **Quantitative Validation:** Extrapolating the regression models down to the physical value of $\alpha = 1.1 \times 10^{-8}\text{ AU}^2$ yielded a precession rate of $43.99''/\text{century}$, matching the accepted observational rate of $\sim 43''/\text{century}$.
 
+<img width="1067" height="351" alt="image" src="https://github.com/user-attachments/assets/58f8f1c6-a537-451d-a947-45d0bab64ab0" />
+
+
 ---
 
 ## Homework 5 - Vector Field Analysis & Numerical Integration
@@ -106,6 +120,9 @@ $$\mathbf{B}(\mathbf{r}) = \frac{\mu_0 I}{4\pi} \int \frac{d\mathbf{\ell} \times
   $$B_z(z) = \frac{\mu_0 I R^2}{2(R^2 + z^2)^{3/2}}$$
 * **Data Visualization:** Generated 1D profile plots and 2D vector field quiver diagrams in the $x\text{-}z$ plane to map field intensity and direction.
 
+<img width="737" height="539" alt="image" src="https://github.com/user-attachments/assets/ed8c2454-8dd2-40e4-9789-fdc7eb87afb3" />
+
+
 ---
 
 ## Homework 6 - Wave Motion & Spectral Analysis
@@ -119,6 +136,9 @@ $$\frac{\partial^2 y}{\partial t^2} = c^2 \frac{\partial^2 y}{\partial x^2} \qua
 * **Signal Processing:** Python notebooks (`HomeworkGraphingC.ipynb`, `Graphing6C.ipynb`) apply the Discrete Fourier Transform (DFT) via `numpy.fft` to extract the frequency spectrum from time-domain signals.
 * **Spectral Analysis:** Verified the fundamental harmonic $f_1 = \frac{c}{2L}$ and higher-order harmonics $f_n = n \cdot f_1$, evaluating energy distribution across different boundary conditions.
 
+<img width="802" height="491" alt="image" src="https://github.com/user-attachments/assets/4855f1a2-f1f8-4a15-b25b-f94a70be5c89" />
+
+
 ---
 
 ## Homework 7 - Particle Diffusion & Monte Carlo Simulation
@@ -129,3 +149,6 @@ This project models 2D particle diffusion and the thermodynamic progression towa
 * **Stochastic Simulation:** C++ (`Hw7DSoln.cpp`) tracks individual particle trajectories over time, recording spatial grid densities and entropy time-series data to CSV files.
 * **Exponential Decay Fitting:** Python (`Hw7Graph.ipynb`) measures the system's approach to maximum entropy $S_\infty$ by analyzing the deviation parameter $R(t) = |S(t) - S_\infty|$.
 * **Parameter Estimation:** By fitting a linear regression model to $\ln R(t) = -\frac{t}{\tau} + C$, the analysis extracted the characteristic relaxation time $\tau$, demonstrating how grid scale governs equilibration rates in stochastic systems.
+
+<img width="1065" height="695" alt="image" src="https://github.com/user-attachments/assets/5d324629-0488-4cba-9e15-1c4ce27c72a2" />
+
