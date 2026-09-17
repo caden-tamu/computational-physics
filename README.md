@@ -10,6 +10,12 @@ This repository showcases the work I completed during my time in undergrad at Te
 * [Homework 6 - Wave Motion & Fourier Analysis](#homework-6---wave-motion--fourier-analysis)
 * [Homework 7 - Particle Diffusion & Monte Carlo Random Walk](#homework-7---particle-diffusion--monte-carlo-random-walk)
 
+* ### 💡 Quantitative & Actuarial Relevance
+While these projects originate from coursework in computational physics, the underlying mathematical and computational techniques directly translate to actuarial science and quantitative risk analysis:
+* **Stochastic & Monte Carlo Simulations:** Modeling random walks and particle diffusion mirrors risk simulation, loss estimation, and ruin theory models.
+* **Numerical Methods & Differential Equations:** Applying Euler’s method to population models reflects deterministic decrement models, mortality projections, and compound interest dynamics.
+* **Data Pipelines & Visualization:** Utilizing C++ for high-performance data generation and Python (`pandas`, `matplotlib`, `numpy`, `scipy`) for statistical analysis, curve fitting, and data visualization.
+
 ## Homework 1 - Numerical Methods & Euler's Method
 
 This repository contains a C++ and Python-based computational study modeling population dynamics over time using Euler’s method for numerical integration alongside analytical solutions. The assignment explores the rate of population growth, defined by the differential equation $\frac{dN}{dt} = R(t) = rN$, as well as a modified system incorporating a time-dependent, density-dependent mortality factor represented by the term $-\beta N^2$. Through C++ simulation scripts like Hw1.cpp and Hw1D.cpp, numerical models are generated and saved to CSV datasets—including population_growth_real1.0.csv and population_growth_beta_euler.csv—to analyze how numerical approximations diverge from exact mathematical models over time.The Python notebook PlottingHw1.ipynb is used to load, visualize, and evaluate these results by plotting $N(t)$ alongside the growth rate $R(t)$, as well as calculating numerical error metrics ($\Delta N$ and $\Delta R$) across time steps. Additionally, the project analyzes a scenario where new, $N^2$-dependent death dynamics are introduced at $t = 100$, demonstrating how the population transitions from exponential growth toward a stable steady-state equilibrium value, $N^* = \frac{r}{\beta} = 20\text{ million}$.
