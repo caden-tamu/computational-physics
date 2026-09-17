@@ -7,4 +7,8 @@ In this assignment, I was tasked to model population growth that is proportional
 
 ## Homework 2 - Projectile Motion
 
-In this assignment, I was tasked to model the trajectory of a rock thrown from a height towards a river, and to determine if the starting angle and velocity was sufficient to reach the other side. The goal was to determine the best launch angle given a variety of adjustments to the system, and to determine the speed of the rock as it reaches the bottom. I included forces from drag force, different wind speeds in multiple directions, and the inclusion of air densities effecting 
+In this assignment, I was tasked to model the trajectory of a rock thrown from a height towards a river, and to determine if the starting angle and velocity was sufficient to reach the other side. The goal was to determine the best launch angle given a variety of adjustments to the system, and to determine the speed of the rock as it reaches the bottom. I included forces from drag force, different wind speeds in multiple directions, and the inclusion of air densities.
+
+## Homework 3 - Bifurcation of Logistic Map
+
+In this assignment, I was tasked with determining the transition to chaos through period doubling of the logistic map $x_n = \mu x_n(1-x_n)$
