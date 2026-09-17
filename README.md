@@ -1,80 +1,131 @@
-# computational-physics
-This repository showcases the work I completed during my time in undergrad at Texas A\&M University. These biweekly projects outline my skills in Python and C++ to handle complex data and arrive at simplified assumptions based on the data.
+# Computational Physics & Quantitative Modeling
+
+This repository contains a collection of computational modeling and data analysis projects built during my undergraduate studies at Texas A&M University. The projects demonstrate the application of **C++ and Python** (`pandas`, `numpy`, `scipy`, `matplotlib`) to simulate complex systems, process large datasets, perform numerical integration, and execute stochastic modeling techniques relevant to quantitative risk analysis and data science.
+
+---
 
 ## Table of Contents
-* [Homework 1 - Numerical Methods & Euler Method](#homework-1---numerical-methods--euler-method)
-* [Homework 2 - Projectile Motion](#homework-2---projectile-motion)
-* [Homework 3 - Bifurcation of Logistic Map](#homework-3---bifurcation-of-logistic-map)
-* [Homework 4 - Orbital Mechanics](#homework-4---orbital-mechanics)
-* [Homework 5 - Biot-Savart Law](#homework-5---biot-savart-law)
-* [Homework 6 - Wave Motion & Fourier Analysis](#homework-6---wave-motion--fourier-analysis)
-* [Homework 7 - Particle Diffusion & Monte Carlo Random Walk](#homework-7---particle-diffusion--monte-carlo-random-walk)
+* [Quantitative & Actuarial Relevance](#-quantitative--actuarial-relevance)
+* [Tech Stack & Tools](#-tech-stack--tools)
+* [Homework 1 - Numerical Methods & Population Dynamics](#homework-1---numerical-methods--population-dynamics)
+* [Homework 2 - Projectile Motion & Multivariate Simulation](#homework-2---projectile-motion--multivariate-simulation)
+* [Homework 3 - Bifurcation & Non-Linear System Analysis](#homework-3---bifurcation--non-linear-system-analysis)
+* [Homework 4 - Orbital Mechanics & Relativistic Precession](#homework-4---orbital-mechanics--relativistic-precession)
+* [Homework 5 - Vector Field Analysis & Numerical Integration](#homework-5---vector-field-analysis--numerical-integration)
+* [Homework 6 - Wave Motion & Spectral Analysis](#homework-6---wave-motion--spectral-analysis)
+* [Homework 7 - Particle Diffusion & Monte Carlo Simulation](#homework-7---particle-diffusion--monte-carlo-simulation)
 
-* ### 💡 Quantitative & Actuarial Relevance
-While these projects originate from coursework in computational physics, the underlying mathematical and computational techniques directly translate to actuarial science and quantitative risk analysis:
-* **Stochastic & Monte Carlo Simulations:** Modeling random walks and particle diffusion mirrors risk simulation, loss estimation, and ruin theory models.
-* **Numerical Methods & Differential Equations:** Applying Euler’s method to population models reflects deterministic decrement models, mortality projections, and compound interest dynamics.
-* **Data Pipelines & Visualization:** Utilizing C++ for high-performance data generation and Python (`pandas`, `matplotlib`, `numpy`, `scipy`) for statistical analysis, curve fitting, and data visualization.
+---
 
-## Homework 1 - Numerical Methods & Euler's Method
+## 💡 Quantitative & Actuarial Relevance
 
-This repository contains a C++ and Python-based computational study modeling population dynamics over time using Euler’s method for numerical integration alongside analytical solutions. The assignment explores the rate of population growth, defined by the differential equation $\frac{dN}{dt} = R(t) = rN$, as well as a modified system incorporating a time-dependent, density-dependent mortality factor represented by the term $-\beta N^2$. Through C++ simulation scripts like Hw1.cpp and Hw1D.cpp, numerical models are generated and saved to CSV datasets—including population_growth_real1.0.csv and population_growth_beta_euler.csv—to analyze how numerical approximations diverge from exact mathematical models over time.The Python notebook PlottingHw1.ipynb is used to load, visualize, and evaluate these results by plotting $N(t)$ alongside the growth rate $R(t)$, as well as calculating numerical error metrics ($\Delta N$ and $\Delta R$) across time steps. Additionally, the project analyzes a scenario where new, $N^2$-dependent death dynamics are introduced at $t = 100$, demonstrating how the population transitions from exponential growth toward a stable steady-state equilibrium value, $N^* = \frac{r}{\beta} = 20\text{ million}$.
+While these projects originate from coursework in computational physics, the core mathematical and computational methods directly map to quantitative risk modeling, financial mathematics, and data analytics:
 
-<img width="867" height="559" alt="image" src="https://github.com/user-attachments/assets/1f6563f8-c3fb-4a57-a7d5-0921e8c092bc" />
+* **Stochastic Processes & Monte Carlo Simulations:** Modeling random walks and particle diffusion mirrors stochastic loss estimation, claims frequency modeling, and ruin theory.
+* **Deterministic Modeling & Differential Equations:** Applying Euler's method and numerical integration reflects deterministic decrement models, population projections, and compound interest dynamics.
+* **Data Pipelines & Statistical Analysis:** Generating large-scale simulation outputs in C++ and performing data wrangling, curve fitting, and visualization using Python (`pandas`, `numpy`, `scipy`, `matplotlib`).
+* **Sensitivity & Parameter Analysis:** Evaluating how small perturbations in inputs affect long-term system stability and equilibrium states.
 
-## Homework 2 - Projectile Motion
+---
 
-This project investigates the two-dimensional motion of a projectile subject to quadratic drag, gravitational acceleration, and environmental perturbations such as headwinds and heavy rainfall, governed by the vector differential equation $\mathbf{F} = m\frac{d^2\mathbf{r}}{dt^2} = -mg\hat{\mathbf{j}} - C_d v \mathbf{v} + \mathbf{F}_{\text{env}}$. 
+## 🛠️ Tech Stack & Tools
 
-Numerical simulations implemented in C++ (Hw2.cpp, Hw2Wind.cpp, Hw2Rain.cpp) compute the trajectory coordinates $(x, y)$ and velocity components across launch angles ranging from $15^\circ$ to $45^\circ$, exporting the simulation outputs into structured CSV files for post-processing.The accompanying Jupyter Notebook Graphing_Hw_2.ipynb utilizes Python libraries pandas and matplotlib to parse the simulated dataset and analyze how environmental factors alter optimal launch conditions and impact speeds. Under baseline conditions with aerodynamic drag, the maximum range is achieved at an optimal angle of $\theta \approx 37^\circ$ (yielding a peak height of approximately $102.86\text{ m}$). When accounting for a $25\text{ mph}$ ($11.18\text{ m/s}$) headwind or heavy rainfall, the effective drag increases, causing the optimal launch angle to shift downward to $33.5^\circ$ and $36.5^\circ$, respectively. The analysis provides a comprehensive comparison of how varying external resistive forces impact range maximization, flight duration, and terminal velocity profiles.
+* **Languages:** C++ (C++11/17), Python 3
+* **Python Libraries:** Pandas, NumPy, SciPy, Matplotlib, Seaborn
+* **Quantitative Methods:** Monte Carlo Simulation, Ordinary Differential Equations (ODEs), Euler's Method, Linear Regression & Curve Fitting, Discrete Fourier Transform (DFT), Trapezoidal Rule Integration
 
-<img width="910" height="546" alt="image" src="https://github.com/user-attachments/assets/34407a41-71b4-40be-be32-669daabc75f6" />
-<img width="921" height="557" alt="image" src="https://github.com/user-attachments/assets/f8e6244a-d868-45d5-9510-c95e6a06e851" />
+---
 
+## Homework 1 - Numerical Methods & Population Dynamics
 
+This module implements a C++ and Python pipeline to model deterministic population dynamics using Euler's method for numerical integration alongside exact analytical solutions. The study examines first-order differential equations governed by:
 
-## Homework 3 - Bifurcation of Logistic Map
+$$\frac{dN}{dt} = R(t) = rN$$
 
-This project investigates non-linear dynamics and the meanderings of chaotic systems through numerical analysis of the logistic map, defined by the recurrence relation $x_{n+1} = r x_n (1 - x_n)$. C++ simulation scripts (Hw3.cpp, Hw3B.cpp, and Hw3D.cpp) execute long-term iterations to track steady-state behavior, period-doubling cascades, and chaotic regimes across varying control parameter values $r$. The resulting simulation outputs—including bifurcation.txt, trajectories.txt, and logistic_mu_2.1.txt—capture the System's state evolution and orbital points under different initial conditions.
+and evaluates a density-dependent mortality model featuring a non-linear decay term:
 
-The accompanying Jupyter Notebook Graphing3.ipynb handles data ingestion, visualization, and analysis using Python. It generates time-series trajectory plots showing the transition of $x_n$ from stable fixed points to multi-cycle oscillations, as well as the complete bifurcation diagram showing $x_\infty$ as a function of $r$. Through these plots, the project illustrates fundamental concepts in chaos theory, including sensitivity to initial conditions, Feigenbaum pitchfork bifurcations, and phase space behavior.
+$$- \beta N^2$$
 
-<img width="841" height="561" alt="image" src="https://github.com/user-attachments/assets/e61e02b0-409a-471c-87a0-59535a61311f" />
+**Key Analysis & Workflow:**
+* **C++ Pipeline:** C++ scripts (`Hw1.cpp`, `Hw1D.cpp`) execute the numerical solvers and export structured simulation outputs to CSV files (`population_growth_real1.0.csv`, `population_growth_beta_euler.csv`).
+* **Data Processing:** The Jupyter Notebook (`PlottingHw1.ipynb`) ingests the datasets to calculate numerical error metrics ($\Delta N$ and $\Delta R$) and evaluate convergence against analytical baselines over varying step sizes.
+* **Equilibrium Analysis:** Modeled a system transition at $t = 100$ where new death dynamics drive the population from exponential growth into a stable steady-state equilibrium at $N^* = \frac{r}{\beta} = 20\text{ million}$.
 
+---
 
+## Homework 2 - Projectile Motion & Multivariate Simulation
 
-## Homework 4 - Orbital Mechanics
+This project models two-dimensional kinematic trajectories subject to quadratic drag, gravity, and environmental variables (headwinds and heavy precipitation). The system is governed by the vector differential equation:
 
-This project models planetary orbital mechanics with a focus on simulating Mercury’s orbit and calculating its perihelion precession under General Relativity. C++ simulation scripts (Hw1A.cpp, Hw1B.cpp, Hw1C.cpp, and Hw1D.cpp) compute orbital trajectories by solving Newtonian gravitational motion and incorporating General Relativity (GR) corrections. The modified gravitational force is modeled as $F_g = \frac{G M m}{r^2} \left(1 + \frac{\alpha}{r^2}\right)$, where the $\frac{\alpha}{r^2}$ term accounts for relativistic effects and drives the precession. The C++ programs output simulation data to text files—such as mercury_ellipse.txt, MercuryOrbitWithGR.txt, and varying- $\alpha$ runs like mercury_gr_0.000100.txt—recording time-series position and velocity vectors $(x, y, v_x, v_y)$.
+$$F = m \frac{d^2 r}{d t^2} = -mg\hat{j} - C_d v \mathbf{v} + F_{\text{env}}$$
 
-The accompanying Jupyter Notebook GraphingHw4.ipynb parses and analyzes the simulation data using Python libraries (numpy, matplotlib, and scipy). It compares uncorrected circular and elliptical Newtonian orbits against-relativistic trajectories, tracks aphelion and perihelion angles over time ($\theta_p$), and performs linear regressions to determine the precession rate $\dot{\theta}_p$. By extrapolating the precession rates across different values of $\alpha$ to the physical value of $\alpha = 1.1 \times 10^{-8}\text{ AU}^2$, the analysis accurately recovers Mercury's observed relativistic precession rate of approximately $43$ arcseconds per century ($43.99''/\text{century}$).
+**Key Analysis & Workflow:**
+* **Multivariate Simulation:** C++ programs (`Hw2.cpp`, `Hw2Wind.cpp`, `Hw2Rain.cpp`) compute trajectory coordinates and velocity vectors across launch angles ($15^\circ$ to $45^\circ$) under various environmental constraints.
+* **Data Analysis & Optimization:** Python (`pandas`, `matplotlib`) was used in `Graphing_Hw_2.ipynb` to clean and analyze the simulation outputs, identifying optimal parameters for maximum range and terminal impact velocity.
+* **Key Results:** Baseline aerodynamic drag reduced the optimal launch angle from $45^\circ$ to $\theta \approx 37^\circ$ (peak height $\approx 102.86\text{ m}$). Factoring in a $25\text{ mph}$ ($11.18\text{ m/s}$) headwind and heavy rainfall further shifted the optimal launch angle downward to $33.5^\circ$ and $36.5^\circ$, respectively.
 
-<img width="1059" height="350" alt="image" src="https://github.com/user-attachments/assets/b6ffeb76-d81d-4b91-87a8-715b0e2f7d24" />
+---
 
+## Homework 3 - Bifurcation & Non-Linear System Analysis
 
-## Homework 5 - Biot-Savart Law
+This project investigates non-linear dynamics, chaos theory, and system stability through the numerical analysis of the logistic map:
 
-This project focuses on the numerical calculation and visualization of magnetic fields produced by a circular current loop using the Biot–Savart law, expressed by the vector integral $\mathbf{B}(\mathbf{r}) = \frac{\mu_0 I}{4\pi} \int \frac{d\mathbf{\ell} \times (\mathbf{r} - \mathbf{r}')}{\vert{}\mathbf{r} - \mathbf{r}'\vert{}^3}$. C++ simulation programs (Hw5aSoln.cpp through Hw5dSoln.cpp) employ numerical integration techniques, such as the trapezoidal rule, to evaluate the magnetic field components across 3D space. The computational outputs are exported to CSV files, including Bz_data.csv, BxByBz_vs_x.csv, Bxyz_vs_r.csv, and B_xz_plane.csv, which record field vector components ($B_x, B_y, B_z$) along specified spatial axes and planes.
+$$x_{n+1} = r x_n (1 - x_n)$$
 
-The accompanying Jupyter Notebook Hw5Graphs.ipynb utilizes Python libraries (pandas, numpy, and matplotlib) to analyze the generated data and produce visual plots of the magnetic field distributions. It evaluates the accuracy of the trapezoidal integration along the $z$-axis against the analytical solution $B_z(z) = \frac{\mu_0 I R^2}{2(R^2 + z^2)^{3/2}}$, demonstrating strong agreement between the two approaches. Additionally, the notebook generates component profiles along off-axis paths and constructs vector 2D vector field plots (quiver diagrams) in the $x$ - $z$ plane to map the magnetic field geometry surrounding the current-carrying loop.
+**Key Analysis & Workflow:**
+* **Long-Term Iteration:** C++ scripts (`Hw3.cpp`, `Hw3B.cpp`, `Hw3D.cpp`) execute iterative simulations to model system behavior across varying values of the control parameter $r$, logging steady-state points and orbital trajectories into structured text files.
+* **Visualization & Sensitivity Analysis:** Python (`Graphing3.ipynb`) processes the trajectory data to generate time-series plots and a full bifurcation diagram ($x_\infty$ vs. $r$), illustrating period-doubling cascades, Feigenbaum pitchfork bifurcations, and chaotic regimes.
+* **Model Insights:** Demonstrates extreme sensitivity to initial conditions and parameter variations, a core concept in risk modeling and non-linear forecasting.
 
-<img width="757" height="551" alt="image" src="https://github.com/user-attachments/assets/47957acb-0ee1-482b-9464-107cb18b49c4" />
+---
 
+## Homework 4 - Orbital Mechanics & Relativistic Precession
 
-## Homework 6 - Wave Motion & Fourier Analysis
+This project models orbital mechanics and quantifies the relativistic precession of Mercury's perihelion. The modified gravitational force is defined by:
 
-This project examines the physics of wave motion and spectral analysis on a stretched string through numerical simulation and Fourier analysis. C++ simulation scripts (hw6.cpp and hw6_3.cpp) model the 1D wave equation, $\frac{\partial^2 y}{\partial t^2} = c^2 \frac{\partial^2 y}{\partial x^2}$, where the wave speed is given by $c = \sqrt{\frac{F_T}{\mu}}$ for a string under tension $F_T$ with linear mass density $\mu$. The C++ programs simulate the spatiotemporal evolution of wave pulses and standing waves, exporting raw displacement and time-series data into files such as time_signal.csv, fourier_spectrum.dat, and wave_data_r.dat.
+$$F_g = \frac{G M m}{r^2} \left(1 + \frac{\alpha}{r^2}\right)$$
 
-The accompanying Jupyter Notebooks (HomeworkGraphingC.ipynb and Graphing6C.ipynb) handle data processing and visualization using numpy and matplotlib. By performing a Discrete Fourier Transform (DFT) on the time-domain signal $y(x_s, t)$, the analysis reconstructs the power spectrum to identify the fundamental frequency $f_1 = \frac{c}{2L}$ and its higher harmonics $f_n = n \cdot f_1$. The notebooks overlay these theoretical harmonic frequencies onto the computed power spectra to evaluate the fidelity of the numerical wave propagation and analyze spectral energy distribution across different boundary conditions and driving parameters.
+where the $\frac{\alpha}{r^2}$ term introduces General Relativity corrections that drive orbital precession.
 
-<img width="812" height="500" alt="image" src="https://github.com/user-attachments/assets/57ec9ae4-4f7c-4359-9a91-b832c99d8495" />
+**Key Analysis & Workflow:**
+* **Numerical Simulation:** C++ scripts (`Hw1A.cpp` through `Hw1D.cpp`) solve the differential equations of motion, exporting time-series position and velocity vectors $(x, y, v_x, v_y)$ across varying $\alpha$ parameter values.
+* **Regression & Extrapolation:** The Jupyter Notebook (`GraphingHw4.ipynb`) utilizes `numpy`, `matplotlib`, and `scipy` to track perihelion angle changes ($\theta_p$) over time and applies linear regression to determine the precession rate $\dot{\theta}_p$.
+* **Quantitative Validation:** Extrapolating the regression models down to the physical value of $\alpha = 1.1 \times 10^{-8}\text{ AU}^2$ yielded a precession rate of $43.99''/\text{century}$, matching the accepted observational rate of $\sim 43''/\text{century}$.
 
+---
 
-## Homework 7 - Partical Diffusion & Monte Carlo Random Walk
+## Homework 5 - Vector Field Analysis & Numerical Integration
 
-This project models the diffusion of particles in a two-dimensional grid and explores the thermodynamic approach toward equilibrium by tracking the evolution of entropy over time. C++ simulation scripts like Hw7DSoln.cpp simulate the random walk or particle distribution dynamics on $N \times N$ spatial grids (such as $100 \times 100$ and $200 \times 200$), generating spatial distribution snapshots and time-series entropy logs saved to CSV files including entropy_vs_time.csv, entropy_vs_time_L200.csv, and individual step snapshots (e.g., snapshot_100000.csv). The entropy per particle, $S(t)$, is tracked to observe the system's relaxation toward a maximum entropy state at equilibrium, $S_\infty$.
+This project evaluates 3D vector fields and magnetic field distributions produced by a circular current loop, utilizing the Biot–Savart law:
 
-The accompanying Jupyter Notebook Hw7Graph.ipynb utilizes numpy and matplotlib to analyze particle spreading and quantify the relaxation rate. By calculating the difference from equilibrium $R(t) = \vert{}S(t) - S_\infty\vert{}$ and plotting $\ln R(t)$ versus time $t$, the analysis fits a linear decay region $\ln R(t) = -\frac{t}{\tau} + C$ to extract the characteristic relaxation time $\tau$. This framework demonstrates how system scale influences equilibration rates and provides visual verification of thermodynamic entropy maximization across 2D grid dimensions.
+$$\mathbf{B}(\mathbf{r}) = \frac{\mu_0 I}{4\pi} \int \frac{d\mathbf{\ell} \times (\mathbf{r} - \mathbf{r}')}{|\mathbf{r} - \mathbf{r}'|^3}$$
 
-<img width="1076" height="699" alt="image" src="https://github.com/user-attachments/assets/39ad473c-7b8d-4fe6-9042-3671f72f9184" />
+**Key Analysis & Workflow:**
+* **Numerical Integration:** C++ programs (`Hw5aSoln.cpp` through `Hw5dSoln.cpp`) apply the trapezoidal rule to evaluate the line integral across a 3D spatial grid, exporting component values $(B_x, B_y, B_z)$ to structured CSV files.
+* **Error Analysis & Vector Mapping:** Python (`Hw5Graphs.ipynb`) evaluates the numerical accuracy against the analytical axial solution:
+  $$B_z(z) = \frac{\mu_0 I R^2}{2(R^2 + z^2)^{3/2}}$$
+* **Data Visualization:** Generated 1D profile plots and 2D vector field quiver diagrams in the $x\text{-}z$ plane to map field intensity and direction.
 
+---
+
+## Homework 6 - Wave Motion & Spectral Analysis
+
+This project simulates 1D wave propagation and performs frequency domain analysis on a vibrating string under tension, governed by the wave equation:
+
+$$\frac{\partial^2 y}{\partial t^2} = c^2 \frac{\partial^2 y}{\partial x^2} \quad \text{where} \quad c = \sqrt{\frac{F_T}{\mu}}$$
+
+**Key Analysis & Workflow:**
+* **Spatiotemporal Simulation:** C++ scripts (`hw6.cpp`, `hw6_3.cpp`) model wave packet propagation and standing wave states, outputting time-series displacement data to CSV files.
+* **Signal Processing:** Python notebooks (`HomeworkGraphingC.ipynb`, `Graphing6C.ipynb`) apply the Discrete Fourier Transform (DFT) via `numpy.fft` to extract the frequency spectrum from time-domain signals.
+* **Spectral Analysis:** Verified the fundamental harmonic $f_1 = \frac{c}{2L}$ and higher-order harmonics $f_n = n \cdot f_1$, evaluating energy distribution across different boundary conditions.
+
+---
+
+## Homework 7 - Particle Diffusion & Monte Carlo Simulation
+
+This project models 2D particle diffusion and the thermodynamic progression toward equilibrium using a stochastic Monte Carlo random walk simulation on $N \times N$ spatial grids ($100 \times 100$ and $200 \times 200$).
+
+**Key Analysis & Workflow:**
+* **Stochastic Simulation:** C++ (`Hw7DSoln.cpp`) tracks individual particle trajectories over time, recording spatial grid densities and entropy time-series data to CSV files.
+* **Exponential Decay Fitting:** Python (`Hw7Graph.ipynb`) measures the system's approach to maximum entropy $S_\infty$ by analyzing the deviation parameter $R(t) = |S(t) - S_\infty|$.
+* **Parameter Estimation:** By fitting a linear regression model to $\ln R(t) = -\frac{t}{\tau} + C$, the analysis extracted the characteristic relaxation time $\tau$, demonstrating how grid scale governs equilibration rates in stochastic systems.
