@@ -19,4 +19,6 @@ $\mu = 2.1$: $\lambda \approx -2.3026$ (Rapidly settles to a single stable fixed
 
 $\mu = 3.3$: $\lambda \approx -0.6189$ (Settles into a stable 2-cycle)
 
-$\mu = 3.6$: $\lambda \approx 0.1821$ (Positive value confirms chaotic behavior)Numerical Perturbation & Slope Fitting Method:We tracked two trajectories starting at $x_0$ and $x_0 + \epsilon$ (where $\epsilon = 10^{-5}$).We logged the log-distance $\ln\vert{}\Delta x_n\vert{}$ over several iterations.By fitting a line to the initial growth phase of $\ln\vert{}\Delta x_n\vert{}$ versus the iteration number $n$, the slope of that line provides an empirical estimate of $\lambda$.
+$\mu = 3.6$: $\lambda \approx 0.1821$ (Positive value confirms chaotic behavior)
+
+Numerical Perturbation & Slope Fitting Method: We tracked two trajectories starting at $x_0$ and $x_0 + \epsilon$ (where $\epsilon = 10^{-5}$).We logged the log-distance $\ln\vert{}\Delta x_n\vert{}$ over several iterations.By fitting a line to the initial growth phase of $\ln\vert{}\Delta x_n\vert{}$ versus the iteration number $n$, the slope of that line provides an empirical estimate of $\lambda$.
