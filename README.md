@@ -22,12 +22,19 @@ This project investigates the two-dimensional motion of a projectile subject to 
 
 Numerical simulations implemented in C++ (Hw2.cpp, Hw2Wind.cpp, Hw2Rain.cpp) compute the trajectory coordinates $(x, y)$ and velocity components across launch angles ranging from $15^\circ$ to $45^\circ$, exporting the simulation outputs into structured CSV files for post-processing.The accompanying Jupyter Notebook Graphing_Hw_2.ipynb utilizes Python libraries pandas and matplotlib to parse the simulated dataset and analyze how environmental factors alter optimal launch conditions and impact speeds. Under baseline conditions with aerodynamic drag, the maximum range is achieved at an optimal angle of $\theta \approx 37^\circ$ (yielding a peak height of approximately $102.86\text{ m}$). When accounting for a $25\text{ mph}$ ($11.18\text{ m/s}$) headwind or heavy rainfall, the effective drag increases, causing the optimal launch angle to shift downward to $33.5^\circ$ and $36.5^\circ$, respectively. The analysis provides a comprehensive comparison of how varying external resistive forces impact range maximization, flight duration, and terminal velocity profiles.
 
+<img width="910" height="546" alt="image" src="https://github.com/user-attachments/assets/34407a41-71b4-40be-be32-669daabc75f6" />
+<img width="921" height="557" alt="image" src="https://github.com/user-attachments/assets/f8e6244a-d868-45d5-9510-c95e6a06e851" />
+
+
 
 ## Homework 3 - Bifurcation of Logistic Map
 
 This project investigates non-linear dynamics and the meanderings of chaotic systems through numerical analysis of the logistic map, defined by the recurrence relation $x_{n+1} = r x_n (1 - x_n)$. C++ simulation scripts (Hw3.cpp, Hw3B.cpp, and Hw3D.cpp) execute long-term iterations to track steady-state behavior, period-doubling cascades, and chaotic regimes across varying control parameter values $r$. The resulting simulation outputs—including bifurcation.txt, trajectories.txt, and logistic_mu_2.1.txt—capture the System's state evolution and orbital points under different initial conditions.
 
 The accompanying Jupyter Notebook Graphing3.ipynb handles data ingestion, visualization, and analysis using Python. It generates time-series trajectory plots showing the transition of $x_n$ from stable fixed points to multi-cycle oscillations, as well as the complete bifurcation diagram showing $x_\infty$ as a function of $r$. Through these plots, the project illustrates fundamental concepts in chaos theory, including sensitivity to initial conditions, Feigenbaum pitchfork bifurcations, and phase space behavior.
+
+<img width="841" height="561" alt="image" src="https://github.com/user-attachments/assets/e61e02b0-409a-471c-87a0-59535a61311f" />
+
 
 
 ## Homework 4 - Orbital Mechanics
@@ -36,11 +43,17 @@ This project models planetary orbital mechanics with a focus on simulating Mercu
 
 The accompanying Jupyter Notebook GraphingHw4.ipynb parses and analyzes the simulation data using Python libraries (numpy, matplotlib, and scipy). It compares uncorrected circular and elliptical Newtonian orbits against-relativistic trajectories, tracks aphelion and perihelion angles over time ($\theta_p$), and performs linear regressions to determine the precession rate $\dot{\theta}_p$. By extrapolating the precession rates across different values of $\alpha$ to the physical value of $\alpha = 1.1 \times 10^{-8}\text{ AU}^2$, the analysis accurately recovers Mercury's observed relativistic precession rate of approximately $43$ arcseconds per century ($43.99''/\text{century}$).
 
+<img width="1059" height="350" alt="image" src="https://github.com/user-attachments/assets/b6ffeb76-d81d-4b91-87a8-715b0e2f7d24" />
+
+
 ## Homework 5 - Biot-Savart Law
 
 This project focuses on the numerical calculation and visualization of magnetic fields produced by a circular current loop using the Biot–Savart law, expressed by the vector integral $\mathbf{B}(\mathbf{r}) = \frac{\mu_0 I}{4\pi} \int \frac{d\mathbf{\ell} \times (\mathbf{r} - \mathbf{r}')}{\vert{}\mathbf{r} - \mathbf{r}'\vert{}^3}$. C++ simulation programs (Hw5aSoln.cpp through Hw5dSoln.cpp) employ numerical integration techniques, such as the trapezoidal rule, to evaluate the magnetic field components across 3D space. The computational outputs are exported to CSV files, including Bz_data.csv, BxByBz_vs_x.csv, Bxyz_vs_r.csv, and B_xz_plane.csv, which record field vector components ($B_x, B_y, B_z$) along specified spatial axes and planes.
 
 The accompanying Jupyter Notebook Hw5Graphs.ipynb utilizes Python libraries (pandas, numpy, and matplotlib) to analyze the generated data and produce visual plots of the magnetic field distributions. It evaluates the accuracy of the trapezoidal integration along the $z$-axis against the analytical solution $B_z(z) = \frac{\mu_0 I R^2}{2(R^2 + z^2)^{3/2}}$, demonstrating strong agreement between the two approaches. Additionally, the notebook generates component profiles along off-axis paths and constructs vector 2D vector field plots (quiver diagrams) in the $x$ - $z$ plane to map the magnetic field geometry surrounding the current-carrying loop.
+
+<img width="757" height="551" alt="image" src="https://github.com/user-attachments/assets/47957acb-0ee1-482b-9464-107cb18b49c4" />
+
 
 ## Homework 6 - Wave Motion & Fourier Analysis
 
@@ -48,8 +61,14 @@ This project examines the physics of wave motion and spectral analysis on a stre
 
 The accompanying Jupyter Notebooks (HomeworkGraphingC.ipynb and Graphing6C.ipynb) handle data processing and visualization using numpy and matplotlib. By performing a Discrete Fourier Transform (DFT) on the time-domain signal $y(x_s, t)$, the analysis reconstructs the power spectrum to identify the fundamental frequency $f_1 = \frac{c}{2L}$ and its higher harmonics $f_n = n \cdot f_1$. The notebooks overlay these theoretical harmonic frequencies onto the computed power spectra to evaluate the fidelity of the numerical wave propagation and analyze spectral energy distribution across different boundary conditions and driving parameters.
 
+<img width="812" height="500" alt="image" src="https://github.com/user-attachments/assets/57ec9ae4-4f7c-4359-9a91-b832c99d8495" />
+
+
 ## Homework 7 - Partical Diffusion & Monte Carlo Random Walk
 
 This project models the diffusion of particles in a two-dimensional grid and explores the thermodynamic approach toward equilibrium by tracking the evolution of entropy over time. C++ simulation scripts like Hw7DSoln.cpp simulate the random walk or particle distribution dynamics on $N \times N$ spatial grids (such as $100 \times 100$ and $200 \times 200$), generating spatial distribution snapshots and time-series entropy logs saved to CSV files including entropy_vs_time.csv, entropy_vs_time_L200.csv, and individual step snapshots (e.g., snapshot_100000.csv). The entropy per particle, $S(t)$, is tracked to observe the system's relaxation toward a maximum entropy state at equilibrium, $S_\infty$.
 
 The accompanying Jupyter Notebook Hw7Graph.ipynb utilizes numpy and matplotlib to analyze particle spreading and quantify the relaxation rate. By calculating the difference from equilibrium $R(t) = \vert{}S(t) - S_\infty\vert{}$ and plotting $\ln R(t)$ versus time $t$, the analysis fits a linear decay region $\ln R(t) = -\frac{t}{\tau} + C$ to extract the characteristic relaxation time $\tau$. This framework demonstrates how system scale influences equilibration rates and provides visual verification of thermodynamic entropy maximization across 2D grid dimensions.
+
+<img width="1076" height="699" alt="image" src="https://github.com/user-attachments/assets/39ad473c-7b8d-4fe6-9042-3671f72f9184" />
+
