@@ -8,11 +8,9 @@ This repository contains a C++ and Python-based computational study modeling pop
 
 #### Overview
 
-This project models projectile motion under various environmental conditions using C++ simulations for data generation and Python (pandas, matplotlib) for visualization and analysis. The goal of the assignment is to analyze how drag, wind, and precipitation affect a projectile's trajectory, maximum height, range, and impact speed across different launch angles.
+This project investigates the two-dimensional motion of a projectile subject to quadratic drag, gravitational acceleration, and environmental perturbations such as headwinds and heavy rainfall, governed by the vector differential equation $\mathbf{F} = m\frac{d^2\mathbf{r}}{dt^2} = -mg\hat{\mathbf{j}} - C_d v \mathbf{v} + \mathbf{F}_{\text{env}}$. 
 
-#### Output data 
-
-files containing trajectory $(x, y)$ coordinate points and impact speed arrays for each scenario.Key Scenarios & Features1. Standard Projectile MotionEvaluates trajectories at angles: 15°, 25°, 35°, and 45°. Identifies the optimal launch angle for maximum range (37°, reaching a maximum height of ~102.86 m).2. Projectile Motion with HeadwindModels aerodynamic drag under a 25 mph (11.18 m/s) headwind.Determines the adjusted optimal launch angle (33.5°).3. Projectile Motion in Heavy RainSimulates the drag/impedance effect caused by heavy rain.Evaluates impact speeds and optimal launch angle (36.5°).Dependencies & RequirementsC++ Compiler (g++ or similar with C++11 support)Python 3.xPython Libraries:pandasmatplotlibglob
+Numerical simulations implemented in C++ (Hw2.cpp, Hw2Wind.cpp, Hw2Rain.cpp) compute the trajectory coordinates $(x, y)$ and velocity components across launch angles ranging from $15^\circ$ to $45^\circ$, exporting the simulation outputs into structured CSV files for post-processing.The accompanying Jupyter Notebook Graphing_Hw_2.ipynb utilizes Python libraries pandas and matplotlib to parse the simulated dataset and analyze how environmental factors alter optimal launch conditions and impact speeds. Under baseline conditions with aerodynamic drag, the maximum range is achieved at an optimal angle of $\theta \approx 37^\circ$ (yielding a peak height of approximately $102.86\text{ m}$). When accounting for a $25\text{ mph}$ ($11.18\text{ m/s}$) headwind or heavy rainfall, the effective drag increases, causing the optimal launch angle to shift downward to $33.5^\circ$ and $36.5^\circ$, respectively. The analysis provides a comprehensive comparison of how varying external resistive forces impact range maximization, flight duration, and terminal velocity profiles.
 
 
 ## Homework 3 - Bifurcation of Logistic Map
